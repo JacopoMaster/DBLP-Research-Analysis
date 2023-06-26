@@ -1,6 +1,5 @@
 import pandas as pd
 import networkx as nx
-import matplotlib.pyplot as plt
 from collections import Counter
 
 import nltk
@@ -155,10 +154,6 @@ print(df_2)
 G_2 = nx.Graph()
 G_2 = create_graph_from_df(G_2, df_2)  # crea il grafo dal dataframe
 
-# plt.figure(figsize=(8,5))
-# pos = nx.spring_layout(G_2)  # posiziona i nodi in modo che non si sovrappongano
-# nx.draw(G_2, pos, with_labels=True, node_size=500, node_color="skyblue", node_shape="o", alpha=0.5, linewidths=4)
-# plt.show()
 
 run_tests(G_2)
 
@@ -174,10 +169,6 @@ print(df_3)
 G_3 = nx.Graph()
 G_3 = create_graph_from_df(G_3, df_3)
 
-# plt.figure(figsize=(8,5))
-# pos = nx.spring_layout(G_3)  # posiziona i nodi in modo che non si sovrappongano
-# nx.draw(G_3, pos, with_labels=True, node_size=500, node_color="skyblue", node_shape="o", alpha=0.5, linewidths=4)
-# plt.show()
 
 run_tests(G_3)
 
@@ -193,10 +184,6 @@ print(df_4)
 G_4 = nx.Graph()
 G_4 = create_graph_from_df(G_4, df_4)
 
-# plt.figure(figsize=(8,5))
-# pos = nx.spring_layout(G_4)  # posiziona i nodi in modo che non si sovrappongano
-# nx.draw(G_4, pos, with_labels=True, node_size=500, node_color="skyblue", node_shape="o", alpha=0.5, linewidths=4)
-# plt.show()
 
 
 run_tests(G_4)
@@ -213,24 +200,15 @@ print(df_5)
 G_5 = nx.Graph()
 G_5 = create_graph_from_df(G_5, df_5)
 
-# plt.figure(figsize=(8,5))
-# pos = nx.spring_layout(G_5)  # posiziona i nodi in modo che non si sovrappongano
-# nx.draw(G_5, pos, with_labels=True, node_size=500, node_color="skyblue", node_shape="o", alpha=0.5, linewidths=4)
-# plt.show()
 
 run_tests(G_5)
 
 ################### Grafo 6 (phdthesis) ###################
 
-# leggi il file .csv
 df_6 = pd.read_csv('dblp-all-csv/out-dblp_phdthesis.csv', low_memory=False, delimiter=';')
-# seleziona solo le colonne 'author', 'title' e 'year'
 df_6 = df_6[['author', 'title', 'year']]
-# Pulizia dei dati: rimuovere le righe con valori mancanti nelle colonne 'author' e 'title' e 'year'
 df_6 = df_6.dropna(subset=['author', 'title', 'year'])
-# trasforma la colonna 'year' in un intero
 df_6['year'] = df_6['year'].apply(check_year)
-# separa gli autori in una lista
 df_6['author'] = df_6['author'].apply(lambda x: x.split('|'))
 
 print(df_6)
@@ -238,10 +216,6 @@ print(df_6)
 G_6 = nx.Graph()
 G_6 = create_graph_from_df(G_6, df_6)
 
-# plt.figure(figsize=(8,5))
-# pos = nx.spring_layout(G_6)  # posiziona i nodi in modo che non si sovrappongano
-# nx.draw(G_6, pos, with_labels=True, node_size=500, node_color="skyblue", node_shape="o", alpha=0.5, linewidths=4)
-# plt.show()
 
 run_tests(G_6)
 
@@ -262,11 +236,6 @@ print(df_7)
 G_7 = nx.Graph()
 G_7 = create_graph_from_df(G_7, df_7)
 
-
-# plt.figure(figsize=(8,5))
-# pos = nx.spring_layout(G_7)  # posiziona i nodi in modo che non si sovrappongano
-# nx.draw(G_7, pos, with_labels=True, node_size=500, node_color="skyblue", node_shape="o", alpha=0.5, linewidths=4)
-# plt.show()
 
 run_tests(G_7)
 
