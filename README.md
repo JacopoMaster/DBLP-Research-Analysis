@@ -12,13 +12,12 @@ Il progetto Python dipende dalle seguenti librerie:
 
 - pandas
 - networkx
-- matplotlib
 - nltk
 
 Puoi installare queste librerie utilizzando il comando seguente:
 
 ```
-pip install pandas networkx matplotlib nltk
+pip install pandas networkx nltk
 ```
 
 ## Descrizione del codice
